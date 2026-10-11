@@ -1,0 +1,44 @@
+{
+  "name": "@deepwhale-cn/dsh-bundle-cn-skills",
+  "version": "0.1.0",
+  "description": "中国大陆合规工具箱的组合包：一条命令装上全部 7 个技能（合规审核 / 公文排版 / 发布自检 / AI 标识 / 隐私对照 / 上架预检 / 密钥扫描）。",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh插件",
+    "deepseek-harness",
+    "bundle",
+    "compliance",
+    "china",
+    "合规",
+    "公文",
+    "上架",
+    "隐私"
+  ],
+  "files": [
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@deepwhale-cn/dsh-cn-compliance": "^0.1.1",
+    "@deepwhale-cn/dsh-cn-doc-formatter": "^0.1.2",
+    "@deepwhale-cn/dsh-release-selfcheck": "^0.1.0",
+    "@deepwhale-cn/dsh-cn-ai-labeling": "^0.1.0",
+    "@deepwhale-cn/dsh-cn-pipl-check": "^0.1.0",
+    "@deepwhale-cn/dsh-cn-appstore-preflight": "^0.1.0",
+    "@deepwhale-cn/dsh-secret-scan": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feely0208/dsh-cn-skills.git",
+    "directory": "dsh-bundle-cn-skills"
+  },
+  "homepage": "https://www.deepwhale.org.cn/"
+}
