@@ -39,6 +39,28 @@ DSH 的插件生态里**绝大多数内容是英文的**，而面向中国大陆
 
 ## 安装
 
+**一条命令装全套（7 个技能）：**
+
+```bash
+dsh plugin add @deepwhale-cn/dsh-cn-compliance \
+               @deepwhale-cn/dsh-cn-doc-formatter \
+               @deepwhale-cn/dsh-release-selfcheck \
+               @deepwhale-cn/dsh-cn-ai-labeling \
+               @deepwhale-cn/dsh-cn-pipl-check \
+               @deepwhale-cn/dsh-cn-appstore-preflight \
+               @deepwhale-cn/dsh-secret-scan
+```
+
+**只装需要的：**
+
+```bash
+dsh plugin add @deepwhale-cn/dsh-cn-compliance
+```
+
+装完重启 DSH，Agent 在相关对话里会自动带上这些技能。
+
+### 手动安装（等价方式，适合要钉版本号的场景）
+
 ```bash
 npm install @deepwhale-cn/dsh-cn-compliance \
               @deepwhale-cn/dsh-cn-doc-formatter \
@@ -75,6 +97,29 @@ npm install @deepwhale-cn/dsh-cn-compliance \
 ```
 
 重启 DSH，Agent 在相关对话里就会自动带上这些技能。
+
+---
+
+## 兼容与运行要求
+
+| 项 | 值 |
+|---|---|
+| DSH 版本 | 任意支持插件系统的版本 |
+| 平台 | **不绑定桌面端**，任意支持 DSH 的载体（桌面端 / Web / CLI） |
+| 运行环境 | Node.js（随 DSH 提供，无需额外安装） |
+| 网络 | **不需要网络**，全部离线可用 |
+
+## 权限与外部服务
+
+**这 7 个技能全部只读本机文件做静态检查，不联网、不上传、不写入你的项目。**
+
+| 技能 | 读取 | 外发 |
+|---|---|---|
+| 合规审核 / AI 标识 / 隐私对照 / 上架预检 / 发布自检 / 密钥扫描 | 工作区内的文件 | ❌ 无 |
+| 公文排版 | 本机文本 | ❌ 无（生成的文件写在本机） |
+
+**不内置敏感词表**——原因见下方「设计原则 4」。这一点很重要：它保证本工具不会变成
+「绕过合规检查」的工具，只做**机械可查的部分**。
 
 ---
 
@@ -122,9 +167,12 @@ npm install @deepwhale-cn/dsh-cn-compliance \
 ## 每个包的详情
 
 - [dsh-cn-compliance](./dsh-cn-compliance/README.md) —— 对外内容合规红线审核
-- [dsh-cn-doc-formatter](./dsh-cn-doc-formatter/README.md) —— 中文公文排版
+- [dsh-cn-doc-formatter](./dsh-cn-doc-formatter/README.md) —— 中文公文排版（GB/T 9704-2012）
 - [dsh-release-selfcheck](./dsh-release-selfcheck/README.md) —— 发布前自检
 - [dsh-cn-ai-labeling](./dsh-cn-ai-labeling/README.md) —— AI 生成合成内容标识合规自检
+- [dsh-cn-pipl-check](./dsh-cn-pipl-check/README.md) —— 个人信息保护：说的和做的是否一致
+- [dsh-cn-appstore-preflight](./dsh-cn-appstore-preflight/README.md) —— 应用市场上架预检
+- [dsh-secret-scan](./dsh-secret-scan/README.md) —— 密钥与敏感信息扫描
 
 ---
 
@@ -151,6 +199,22 @@ A collection of **Chinese-market skills for [DeepSeek Harness](https://github.co
 - **`dsh-cn-ai-labeling`** — AI-generated content labeling self-check against
   China's mandatory national standard GB 45438—2025 (explicit/implicit labels,
   file metadata format, export paths, app-store submission)
+- **`dsh-cn-pipl-check`** — PIPL compliance: does your privacy policy match what
+  the code actually does (permissions, third-party SDKs, user-rights entry points,
+  separate consent, outbound data transfer)
+- **`dsh-cn-appstore-preflight`** — China app-store pre-submission check: app filing,
+  privacy-policy reachability, permission purpose statements, account-deletion entry,
+  minor protection, submission-material skeleton
+- **`dsh-secret-scan`** — secret and sensitive-data scan: cloud AKs, tokens, private
+  keys, credential files tracked by git, internal IPs and hostnames (domain-agnostic)
+
+**Install:**
+
+```bash
+dsh plugin add @deepwhale-cn/dsh-cn-compliance
+```
+
+All seven are fully offline static checks — no network, no upload.
 
 The release preflight is domain-agnostic and useful for any project that ships
 build artifacts to multiple channels — its whole point is catching failures that
