@@ -42,14 +42,10 @@ DSH 的插件生态里**绝大多数内容是英文的**，而面向中国大陆
 **一条命令装全套（7 个技能）：**
 
 ```bash
-dsh plugin add @deepwhale-cn/dsh-cn-compliance \
-               @deepwhale-cn/dsh-cn-doc-formatter \
-               @deepwhale-cn/dsh-release-selfcheck \
-               @deepwhale-cn/dsh-cn-ai-labeling \
-               @deepwhale-cn/dsh-cn-pipl-check \
-               @deepwhale-cn/dsh-cn-appstore-preflight \
-               @deepwhale-cn/dsh-secret-scan
+dsh plugin add @deepwhale-cn/dsh-bundle-cn-skills
 ```
+
+`dsh-bundle-cn-skills` 是组合包，本身不含逻辑，只声明依赖并把 7 个技能一次性挂进 profile。
 
 **只装需要的：**
 
@@ -208,7 +204,13 @@ A collection of **Chinese-market skills for [DeepSeek Harness](https://github.co
 - **`dsh-secret-scan`** — secret and sensitive-data scan: cloud AKs, tokens, private
   keys, credential files tracked by git, internal IPs and hostnames (domain-agnostic)
 
-**Install:**
+**Install (all seven at once):**
+
+```bash
+dsh plugin add @deepwhale-cn/dsh-bundle-cn-skills
+```
+
+Or install a single skill:
 
 ```bash
 dsh plugin add @deepwhale-cn/dsh-cn-compliance
