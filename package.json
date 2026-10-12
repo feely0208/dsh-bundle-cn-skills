@@ -1,0 +1,54 @@
+{
+  "name": "@deepwhale-cn/dsh-bundle-cn-skills",
+  "version": "0.1.0",
+  "description": "DSH 中文合规与工程技能集（7 个技能）的组合包。本文件同时作为仓库根清单，供插件市场识别包名并核对 npm 包。",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh插件",
+    "deepseek-harness",
+    "plugin",
+    "bundle",
+    "skill",
+    "compliance",
+    "china",
+    "合规",
+    "公文",
+    "上架",
+    "隐私",
+    "efficiency",
+    "工具集"
+  ],
+  "files": [
+    "dsh-bundle-cn-skills/cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./dsh-bundle-cn-skills/cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@deepwhale-cn/dsh-cn-compliance": "^0.1.1",
+    "@deepwhale-cn/dsh-cn-doc-formatter": "^0.1.2",
+    "@deepwhale-cn/dsh-release-selfcheck": "^0.1.0",
+    "@deepwhale-cn/dsh-cn-ai-labeling": "^0.1.0",
+    "@deepwhale-cn/dsh-cn-pipl-check": "^0.1.0",
+    "@deepwhale-cn/dsh-cn-appstore-preflight": "^0.1.0",
+    "@deepwhale-cn/dsh-secret-scan": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feely0208/dsh-cn-skills.git"
+  },
+  "homepage": "https://github.com/feely0208/dsh-cn-skills#readme",
+  "bugs": {
+    "url": "https://github.com/feely0208/dsh-cn-skills/issues"
+  },
+  "_note": "仓库根的这份清单有两个作用：① 供 dsh-plugin.org 的自动扫描识别插件包名（收录要求：仓库根目录需包含 package.json）；② 指向真正的组合包与 patch 层。各子包的 npm 发布仍按 PUBLISHING.md 的约定、cd 到各自子目录执行 —— 本文件不参与发布。"
+}
