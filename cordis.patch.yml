@@ -1,0 +1,23 @@
+# @deepwhale-cn/dsh-bundle-cn-skills 的组合层（根目录版）
+#
+# profile 在 dsh.profile.bundles 里列出本包后，这一层会把 7 个技能插件
+# 一次性挂进组合 —— 用户只需一条 `dsh plugin add @deepwhale-cn/dsh-bundle-cn-skills`。
+#
+# 约定（官方 verify-cordis-config 强制）：每个具名行都必须能从本包自己的
+# dependencies 解析，因此下面 7 个包名都已写进 package.json 的 dependencies，
+# 且 name 与各自 package.json 的 name 完全一致。
+- insert:
+    - id: cn-compliance
+      name: '@deepwhale-cn/dsh-cn-compliance'
+    - id: cn-doc-formatter
+      name: '@deepwhale-cn/dsh-cn-doc-formatter'
+    - id: release-selfcheck
+      name: '@deepwhale-cn/dsh-release-selfcheck'
+    - id: cn-ai-labeling
+      name: '@deepwhale-cn/dsh-cn-ai-labeling'
+    - id: cn-pipl-check
+      name: '@deepwhale-cn/dsh-cn-pipl-check'
+    - id: cn-appstore-preflight
+      name: '@deepwhale-cn/dsh-cn-appstore-preflight'
+    - id: secret-scan
+      name: '@deepwhale-cn/dsh-secret-scan'
