@@ -42,7 +42,7 @@ DSH 的插件生态里**绝大多数内容是英文的**，而面向中国大陆
 **一条命令装全套（7 个技能）：**
 
 ```bash
-dsh plugin add @deepwhale-cn/dsh-bundle-cn-skills
+dsh plugin --profile web add @deepwhale-cn/dsh-bundle-cn-skills
 ```
 
 `dsh-bundle-cn-skills` 是组合包，本身不含逻辑，只声明依赖并把 7 个技能一次性挂进 profile。
@@ -207,7 +207,7 @@ A collection of **Chinese-market skills for [DeepSeek Harness](https://github.co
 **Install (all seven at once):**
 
 ```bash
-dsh plugin add @deepwhale-cn/dsh-bundle-cn-skills
+dsh plugin --profile web add @deepwhale-cn/dsh-bundle-cn-skills
 ```
 
 Or install a single skill:
