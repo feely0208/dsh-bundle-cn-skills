@@ -1,6 +1,6 @@
 {
   "name": "@deepwhale-cn/dsh-bundle-cn-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "DSH 中文合规与工程技能集（7 个技能）的组合包。本文件同时作为仓库根清单，供插件市场识别包名并核对 npm 包。",
   "type": "module",
   "license": "MIT",
