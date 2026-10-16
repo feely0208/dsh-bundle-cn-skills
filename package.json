@@ -46,11 +46,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/feely0208/dsh-cn-skills.git"
+    "url": "git+https://github.com/feely0208/dsh-bundle-cn-skills.git"
   },
-  "homepage": "https://github.com/feely0208/dsh-cn-skills#readme",
+  "homepage": "https://github.com/feely0208/dsh-bundle-cn-skills#readme",
   "bugs": {
-    "url": "https://github.com/feely0208/dsh-cn-skills/issues"
+    "url": "https://github.com/feely0208/dsh-bundle-cn-skills/issues"
   },
   "_note": "仓库根的这份清单有两个作用：① 供 dsh-plugin.org 的自动扫描识别插件包名（收录要求：仓库根目录需包含 package.json）；② 指向真正的组合包与 patch 层。各子包的 npm 发布仍按 PUBLISHING.md 的约定、cd 到各自子目录执行 —— 本文件不参与发布。",
   "main": "./lib/index.js",
