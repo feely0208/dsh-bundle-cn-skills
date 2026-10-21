@@ -231,3 +231,7 @@ build artifacts to multiple channels — its whole point is catching failures th
 ---
 
 由 [深鲸 DeepWhale](https://deepwhale.org.cn) 维护。
+
+---
+
+<p align="right"><a href="https://deepwhale.org.cn"><img src="https://www.deepwhale.org.cn/images/badge/deepwhale-badge.png" alt="powered by dwh" height="20"></a></p>
