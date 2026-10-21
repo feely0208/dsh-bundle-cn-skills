@@ -1,5 +1,7 @@
 # DSH 中文合规与工程技能集
 
+[![dshfind 收录](https://dshfind.com/api/badge/feely0208/dsh-bundle-cn-skills?lang=zh)](https://dshfind.com/zh/plugins/feely0208/dsh-bundle-cn-skills)
+
 > 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）用的中文场景插件集。
 > 面向**中国大陆市场**的合规审核、公文排版，以及通用但容易踩坑的发布自检。
 
